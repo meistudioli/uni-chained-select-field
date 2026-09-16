@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Web Component: &lt;uni-chained-select-field /> - a web component based on uniopen design language</title>
+<meta name="description" content="uni-chained-select-field is an encapsulated Web Component built upon the foundation of the uniopen design language. It brings hierarchical, multi-level cascader selection into native form workflows, enabling developers to structure multi-tiered choices tailored to their specific interface context. Implementation is straightforward: simply configure your structured dataset and connect your native form controls through their designated slots. The component dynamically orchestrates column expansions, seamless view transitions, and path resolution across levels—adapting complex hierarchical selections into a cohesive, fluid user experience while adhering to standard HTML form behaviors and uniopen design specifications." />
+<script type="module" src="mjs/wc-uni-chained-select-field.js"></script>
+<link rel="stylesheet" href="https://blog.lalacube.com/mei/css/wc-base.css">
+<style>
+#hd,#ft{display:none;}
+body{position:relative;inline-size:100vw;block-size:100vh;margin:0;}
+
+.wrap {
+  inline-size: 100%;
+  max-inline-size: min(800px, calc(100% - 2em));
+  box-sizing: border-box;
+}
+
+.demo-wrap {
+  position: relative;
+  inline-size: min(100%, 800px);
+  background-color: rgba(245 245 245);
+  margin: 6em auto 1em;
+  padding: 3em 1.5em;
+  box-sizing: border-box;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+</style>
+</head>
+
+<body class="flex-center">
+<div class="wrap">
+  <div class="demo-wrap">
+    <uni-chained-select-field>
+      <script type="application/json">
+        {
+          "tree": [
+            {
+              "content": "Mac",
+              "value": "Mac",
+              "children": [
+                {
+                  "content": "MacBook Neo",
+                  "value": "MacBook Neo",
+                  "children": [
+                    {
+                      "content": "Silver",
+                      "value": "MacBook Neo - Silver"
+                    },
+                    {
+                      "content": "Blush",
+                      "value": "MacBook Neo - Blush"
+                    },
+                    {
+                      "content": "Citrus",
+                      "value": "MacBook Neo - Citrus"
+                    },
+                    {
+                      "content": "Indigo",
+                      "value": "MacBook Neo - Indigo"
+                    }
+                  ]
+                },
+                {
+                  "content": "MacBook Air",
+                  "value": "MacBook Air",
+                  "children": [
+                    {
+                      "content": "Sky Blue",
+                      "value": "MacBook Air - Sky Blue"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "MacBook Air - Silver"
+                    },
+                    {
+                      "content": "Starlight",
+                      "value": "MacBook Air - Starlight"
+                    },
+                    {
+                      "content": "Midnight",
+                      "value": "MacBook Air - Midnight"
+                    }
+                  ]
+                },
+                {
+                  "content": "MacBook Pro",
+                  "value": "MacBook Pro",
+                  "children": [
+                    {
+                      "content": "Space Black",
+                      "value": "MacBook Pro - Space Black"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "MacBook Pro - Silver"
+                    }
+                  ]
+                },
+                {
+                  "content": "iMac",
+                  "value": "iMac",
+                  "children": [
+                    {
+                      "content": "Blue",
+                      "value": "iMac - Blue"
+                    },
+                    {
+                      "content": "Purple",
+                      "value": "iMac - Purple"
+                    },
+                    {
+                      "content": "Pink",
+                      "value": "iMac - Pink"
+                    },
+                    {
+                      "content": "Orange",
+                      "value": "iMac - Orange"
+                    },
+                    {
+                      "content": "Yellow",
+                      "value": "iMac - Yellow"
+                    },
+                    {
+                      "content": "Green",
+                      "value": "iMac - Green"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "iMac - Silver"
+                    }
+                  ]
+                },
+                {
+                  "content": "Mac mini",
+                  "value": "Mac mini",
+                  "children": [
+                    {
+                      "content": "M6 chip",
+                      "value": "Mac mini - M6 chip"
+                    },
+                    {
+                      "content": "M5 Pro chip",
+                      "value": "Mac mini - M5 Pro chip"
+                    }
+                  ]
+                },
+                {
+                  "content": "Mac Studio",
+                  "value": "Mac Studio",
+                  "children": [
+                    {
+                      "content": "M5 Max chip",
+                      "value": "Mac Studio - M5 Max chip"
+                    },
+                    {
+                      "content": "M5 Ultra chip",
+                      "value": "Mac Studio - M5 Ultra chip"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "iPad",
+              "value": "iPad",
+              "children": [
+                {
+                  "content": "iPad Pro",
+                  "value": "iPad Pro",
+                  "children": [
+                    {
+                      "content": "Space Black",
+                      "value": "iPad Pro - Space Black"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "iPad Pro - Silver"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPad Air",
+                  "value": "iPad Air",
+                  "children": [
+                    {
+                      "content": "Blue",
+                      "value": "iPad Air - Blue"
+                    },
+                    {
+                      "content": "Purple",
+                      "value": "iPad Air - Purple"
+                    },
+                    {
+                      "content": "Starlight",
+                      "value": "iPad Air - Starlight"
+                    },
+                    {
+                      "content": "Space Gray",
+                      "value": "iPad Air - Space Gray"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPad",
+                  "value": "iPad Normal",
+                  "children": [
+                    {
+                      "content": "Blue",
+                      "value": "iPad - Blue"
+                    },
+                    {
+                      "content": "Pink",
+                      "value": "iPad - Pink"
+                    },
+                    {
+                      "content": "Yellow",
+                      "value": "iPad - Yellow"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "iPad - Silver"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPad mini",
+                  "value": "iPad mini",
+                  "children": [
+                    {
+                      "content": "Blue",
+                      "value": "iPad mini - Blue"
+                    },
+                    {
+                      "content": "Purple",
+                      "value": "iPad mini - Purple"
+                    },
+                    {
+                      "content": "Starlight",
+                      "value": "iPad mini - Starlight"
+                    },
+                    {
+                      "content": "Space Gray",
+                      "value": "iPad mini - Space Gray"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "iPhone",
+              "value": "iPhone",
+              "children": [
+                {
+                  "content": "iPhone Duo",
+                  "value": "iPhone Duo",
+                  "children": [
+                    {
+                      "content": "Star White",
+                      "value": "iPhone Duo - Star White"
+                    },
+                    {
+                      "content": "Night Sky",
+                      "value": "iPhone Duo - Night Sky"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPhone 18 Pro",
+                  "value": "iPhone 18 Pro",
+                  "children": [
+                    {
+                      "content": "Burgundy",
+                      "value": "iPhone 18 Pro - Burgundy"
+                    },
+                    {
+                      "content": "Glacier",
+                      "value": "iPhone 18 Pro - Glacier"
+                    },
+                    {
+                      "content": "Silver",
+                      "value": "iPhone 18 Pro - Silver"
+                    },
+                    {
+                      "content": "Black",
+                      "value": "iPhone 18 Pro - Black"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPhone Air",
+                  "value": "iPhone Air",
+                  "children": [
+                    {
+                      "content": "Sky Blue",
+                      "value": "iPhone Air - Sky Blue"
+                    },
+                    {
+                      "content": "Cloud White",
+                      "value": "iPhone Air - Cloud White"
+                    },
+                    {
+                      "content": "Space Black",
+                      "value": "iPhone Air - Space Black"
+                    },
+                    {
+                      "content": "Light Gold",
+                      "value": "iPhone Air - Light Gold"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPhone 17",
+                  "value": "iPhone 17",
+                  "children": [
+                    {
+                      "content": "Lavender",
+                      "value": "iPhone 17 - Lavender"
+                    },
+                    {
+                      "content": "Mist Blue",
+                      "value": "iPhone 17 - Mist Blue"
+                    },
+                    {
+                      "content": "White",
+                      "value": "iPhone 17 - White"
+                    },
+                    {
+                      "content": "Sage",
+                      "value": "iPhone 17 - Sage"
+                    },
+                    {
+                      "content": "Black",
+                      "value": "iPhone 17 - Black"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPhone 17e",
+                  "value": "iPhone 17e",
+                  "children": [
+                    {
+                      "content": "Soft Pink",
+                      "value": "iPhone 17e - Soft Pink"
+                    },
+                    {
+                      "content": "White",
+                      "value": "iPhone 17e - White"
+                    },
+                    {
+                      "content": "Black",
+                      "value": "iPhone 17e - Black"
+                    }
+                  ]
+                },
+                {
+                  "content": "iPhone 16",
+                  "value": "iPhone 16",
+                  "children": [
+                    {
+                      "content": "Ultramarine",
+                      "value": "iPhone 16 - Ultramarine"
+                    },
+                    {
+                      "content": "Teal",
+                      "value": "iPhone 16 - Teal"
+                    },
+                    {
+                      "content": "Pink",
+                      "value": "iPhone 16 - Pink"
+                    },
+                    {
+                      "content": "White",
+                      "value": "iPhone 16 - White"
+                    },
+                    {
+                      "content": "Black",
+                      "value": "iPhone 16 - Black"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "Watch",
+              "value": "Watch",
+              "children": [
+                {
+                  "content": "Apple Watch Series 12",
+                  "value": "Apple Watch Series 12",
+                  "children": [
+                    {
+                      "content": "Aluminum",
+                      "value": "Apple Watch Series 12 - Aluminum"
+                    },
+                    {
+                      "content": "Titanium",
+                      "value": "Apple Watch Series 12 - Titanium"
+                    },
+                    {
+                      "content": "Ceramic",
+                      "value": "Apple Watch Series 12 - Ceramic"
+                    }
+                  ]
+                },
+                {
+                  "content": "Apple Watch Ultra 4",
+                  "value": "Apple Watch Ultra 4",
+                  "children": [
+                    {
+                      "content": "Black",
+                      "value": "Apple Watch Ultra 4 - Black"
+                    },
+                    {
+                      "content": "Natural",
+                      "value": "Apple Watch Ultra 4 - Natural"
+                    }
+                  ]
+                },
+                {
+                  "content": "Apple Watch SE3",
+                  "value": "Apple Watch SE3",
+                  "children": [
+                    {
+                      "content": "Midnight",
+                      "value": "Apple Watch SE3 - Midnight"
+                    },
+                    {
+                      "content": "Starlight",
+                      "value": "Apple Watch SE3 - Starlight"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "content": "Vision",
+              "value": "Vision"
+            },
+            {
+              "content": "AirPods",
+              "value": "AirPods",
+              "children": [
+                {
+                  "content": "AirPods",
+                  "value": "AirPods - normal",
+                  "children": [
+                    {
+                      "content": "AirPods 5",
+                      "value": "AirPods 5"
+                    },
+                    {
+                      "content": "AirPods 5 with Wireless Charging Case",
+                      "value": "AirPods 5 with Wireless Charging Case"
+                    }
+                  ]
+                },
+                {
+                  "content": "AirPods Pro",
+                  "value": "AirPods Pro"
+                },
+                {
+                  "content": "AirPods Max",
+                  "value": "AirPods Max",
+                  "children": [
+                    {
+                      "content": "Blue",
+                      "value": "AirPods Max - Blue"
+                    },
+                    {
+                      "content": "Purple",
+                      "value": "AirPods Max - Purple"
+                    },
+                    {
+                      "content": "Midnight",
+                      "value": "AirPods Max - Midnight"
+                    },
+                    {
+                      "content": "Starlight",
+                      "value": "AirPods Max - Starlight"
+                    },
+                    {
+                      "content": "Orange",
+                      "value": "AirPods Max - Orange"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      </script>
+
+      <!-- select -->
+      <uni-select-field slot="select" subject="Apple">
+        <select slot="select" name="my-select">
+          <option value="" disabled selected>Please select product</option>
+        </select>
+      </uni-select-field>
+    </uni-chained-select-field>
+  </div>
+</div>
+
+</body>
+
+</html>
