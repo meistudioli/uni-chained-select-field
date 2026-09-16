@@ -15,6 +15,11 @@ const custumEvents = {
   pick: 'uni-chained-select-field-pick',
 };
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+const isWebKit = Boolean(
+  typeof CSS !== 'undefined' &&
+  CSS.supports &&
+  CSS.supports('-webkit-touch-callout', 'none')
+);
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -577,7 +582,7 @@ export class UniChainedSelectField extends HTMLElement {
       return;
     }
 
-    if (!isSafari) {
+    if (!isSafari && !isWebKit) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -647,7 +652,7 @@ export class UniChainedSelectField extends HTMLElement {
   }
 
   #rollActives() {
-    if (isSafari) {
+    if (isSafari || isWebKit) {
       return;
     }
 
