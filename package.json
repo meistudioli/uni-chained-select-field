@@ -1,6 +1,6 @@
 {
   "name": "uni-chained-select-field",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<uni-chained-select-field /> is an encapsulated Web Component built upon the foundation of the uniopen design language. It brings hierarchical, multi-level cascader selection into native form workflows, enabling developers to structure multi-tiered choices tailored to their specific interface context. Implementation is straightforward: simply configure your structured dataset and connect your native form controls through their designated slots. The component dynamically orchestrates column expansions, seamless view transitions, and path resolution across levels—adapting complex hierarchical selections into a cohesive, fluid user experience while adhering to standard HTML form behaviors and uniopen design specifications.",
   "keywords": [
     "web"

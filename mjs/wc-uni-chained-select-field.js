@@ -29,6 +29,7 @@ ${_uniColorPalette}
 
 :host {
   position: relative;
+  inline-size: fit-content;
   display: block;
 }
 
