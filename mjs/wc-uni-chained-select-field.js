@@ -559,7 +559,7 @@ export class UniChainedSelectField extends HTMLElement {
   _onFocus() {
     const { slotList } = this.#nodes;
 
-    if (!slotList.matches(':popover-open')) {
+    if (this.tree.length && !slotList.matches(':popover-open')) {
       slotList.showPopover();
     }
   }
