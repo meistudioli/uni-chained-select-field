@@ -584,7 +584,7 @@ export class UniChainedSelectField extends HTMLElement {
     }
 
     if (!isSafari && !isWebKit) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start', container: 'nearest' });
     }
 
     Array.from(target.parentNode.querySelectorAll('[data-active]'))
@@ -660,7 +660,7 @@ export class UniChainedSelectField extends HTMLElement {
     Array.from(this.#nodes.optionList.querySelectorAll('[data-active]'))
       .forEach(
         (node) => {
-          node.scrollIntoView({ block: 'start' });
+          node.scrollIntoView({ block: 'start', container: 'nearest' });
         }
       );
   }
